@@ -1,3 +1,32 @@
+/* 
+ * PAKE AKUN LAMA: https://drive.google.com/drive/folders/16VimGUXJ9RwraFPLu5IwYqFshHOmeesw?usp=drive_link
+ * 
+ * < LCD />
+ * - Pin VSS  : ke GND + potensio kaki kiri
+ * - Pin VDD  : ke 5V + potensio kaki kanan
+ * - Pin V0   : kaki tengah Potensiometer (untuk mengatur kecerahan lcd)
+ * - Pin RS   : Pin 12
+ * - Pin RW   : GND
+ * - Pin E    : Pin 11
+ * - Pin D4   : Pin 5
+ * - Pin D5   : Pin 4
+ * - Pin D6   : Pin 3
+ * - Pin D7   : Pin 2
+ * - Pin A    : resistor 220 ohm + 5V
+ * - Pin K    : GND
+ * 
+ * < LED />
+ * - Cathode (yg pendek)  : GND
+ * - Anode   (yg panjang) : 8
+ * < ULTRASONIC SENSOR />
+ * - Pin Trig : 6
+ * - Pin Echo : 7
+ * 
+ * < BUZZER />
+ * - Pin ( + ) : Pin 9
+ * - Pin ( - ) : GND (-)
+ */
+
 #include <LiquidCrystal.h>
 LiquidCrystal lcd(12, 11, 5, 4, 3, 2);
 int pins[] = {6, 7, 8, 9};
