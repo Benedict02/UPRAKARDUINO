@@ -3,31 +3,30 @@
  * 
  * < DHT Sensor />
  * - VCC  : 5V ( + )
- * - Data : 2
+ * - Data : 3
  * - GND  : ( - )
 */
 
-#include <DHT.h>
-
-#define DHTPIN 2
-#define DHTTYPE DHT11
-
+#include "DHT.h"
+#define DHTPIN 9     
+#define DHTTYPE DHT11  
 DHT dht(DHTPIN, DHTTYPE);
+float h, t, f;
 
-void setup(){
+void setup() {
   Serial.begin(9600);
   dht.begin();
 }
 
+void loop() {
+  h = dht.readHumidity();
+  t = dht.readTemperature();
+  f = dht.readTemperature(true);
 
-void loop(){
-  float h = dht.readHumidity();
-  float t = dht.readTemperature();
-
-  Serial.print("Humidity: ");
+  Serial.print(F("Humidity: "));
   Serial.print(h);
-  Serial.print("Celcius: ");
+  Serial.print(F("%  Temperature: "));
   Serial.print(t);
-  Serial.println("*C");
-
+  Serial.print(F("°C "));
+  Serial.println(f);
 }
